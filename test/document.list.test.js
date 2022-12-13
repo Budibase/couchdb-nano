@@ -19,7 +19,7 @@ afterEach(() => {
   nock.cleanAll()
 })
 
-test('should be able to get a list of documents - GET /db/_all_docs - db.list', async () => {
+test('should be able to get a list of documents - POST /db/_all_docs - db.list', async () => {
   // mocks
   const response = {
     total_rows: 23516,
@@ -49,7 +49,7 @@ test('should be able to get a list of documents - GET /db/_all_docs - db.list', 
     ]
   }
   const scope = nock(COUCH_URL)
-    .get('/db/_all_docs')
+    .post('/db/_all_docs')
     .reply(200, response)
 
   // test GET /db/_all_docs
@@ -59,7 +59,7 @@ test('should be able to get a list of documents - GET /db/_all_docs - db.list', 
   expect(scope.isDone()).toBe(true)
 })
 
-test('should be able to get a list of documents with opts - GET /db/_all_docs - db.list', async () => {
+test('should be able to get a list of documents with opts - POST /db/_all_docs - db.list', async () => {
   // mocks
   const response = {
     total_rows: 23516,
@@ -81,7 +81,7 @@ test('should be able to get a list of documents with opts - GET /db/_all_docs - 
     ]
   }
   const scope = nock(COUCH_URL)
-    .get('/db/_all_docs?include_docs=true&limit=1')
+    .post('/db/_all_docs')
     .reply(200, response)
 
   // test GET /db/_all_docs
@@ -91,14 +91,14 @@ test('should be able to get a list of documents with opts - GET /db/_all_docs - 
   expect(scope.isDone()).toBe(true)
 })
 
-test('should be able to handle 404 - GET /db/_all_docs - db.list', async () => {
+test('should be able to handle 404 - POST /db/_all_docs - db.list', async () => {
   // mocks
   const response = {
     error: 'not_found',
     reason: 'missing'
   }
   const scope = nock(COUCH_URL)
-    .get('/db/_all_docs')
+    .post('/db/_all_docs')
     .reply(404, response)
 
   // test GET /db/_all_docs
