@@ -1,5 +1,5 @@
 {
-  "name": "nano",
+  "name": "@budibase/nano",
   "description": "The official CouchDB client for Node.js",
   "license": "Apache-2.0",
   "homepage": "http://github.com/apache/couchdb-nano",
