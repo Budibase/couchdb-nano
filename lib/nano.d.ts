@@ -1272,12 +1272,12 @@ declare namespace nano {
     descending?: boolean;
 
     /** Stop returning records when the specified key is reached. */
-    endkey?: string;
+    endkey?: any;
 
     /** Stop returning records when the specified key is reached.
      *
      * end_key is an alias for endkey */
-    end_key?: string;
+    end_key?: any;
 
     /** Stop returning records when the specified document ID is reached. */
     end_key_doc_id?: string;
@@ -1293,10 +1293,10 @@ declare namespace nano {
     inclusive_end?: boolean;
 
     /** Return only documents that match the specified key. */
-    key?: string;
+    key?: any;
 
     /** Return only documents that match the specified keys. */
-    keys?: string | string[];
+    keys?: any[];
 
     /** Limit the number of the returned documents to the specified number. */
     limit?: number;
@@ -1314,12 +1314,12 @@ declare namespace nano {
     stale?: string;
 
     /** Return records starting with the specified key. */
-    startkey?: string;
+    startkey?: any;
 
     /** Return records starting with the specified key.
      *
      * start_key is an alias for startkey */
-    start_key?: string;
+    start_key?: any;
 
     /** Return records starting with the specified document ID. */
     start_key_doc_id?: string;
@@ -1355,16 +1355,16 @@ declare namespace nano {
   interface DocumentFetchParams {
     conflicts?: boolean;
     descending?: boolean;
-    end_key?: string;
+    end_key?: any;
     end_key_doc_id?: string;
     include_docs?: boolean;
     inclusive_end?: boolean;
-    key?: string;
-    keys?: string | string[]; 
+    key?: any;
+    keys?: any[];
     limit?: number;
     skip?: number;
     stale?: string;
-    start_key?: string;
+    start_key?: any;
     start_key_doc_id?: string;
     update_seq?: boolean;
   }
