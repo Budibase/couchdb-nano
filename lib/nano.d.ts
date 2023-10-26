@@ -1296,7 +1296,7 @@ declare namespace nano {
     key?: any;
 
     /** Return only documents that match the specified keys. */
-    keys?: any | any[];
+    keys?: any[];
 
     /** Limit the number of the returned documents to the specified number. */
     limit?: number;
@@ -1355,16 +1355,16 @@ declare namespace nano {
   interface DocumentFetchParams {
     conflicts?: boolean;
     descending?: boolean;
-    end_key?: string;
+    end_key?: any;
     end_key_doc_id?: string;
     include_docs?: boolean;
     inclusive_end?: boolean;
-    key?: string;
-    keys?: string | string[]; 
+    key?: any;
+    keys?: any[];
     limit?: number;
     skip?: number;
     stale?: string;
-    start_key?: string;
+    start_key?: any;
     start_key_doc_id?: string;
     update_seq?: boolean;
   }
