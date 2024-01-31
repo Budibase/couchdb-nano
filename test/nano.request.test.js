@@ -478,7 +478,7 @@ test('check request doesn\'t mangle bodies containing functions - nano.request',
 test('check request sends user-agent header - nano.request', async () => {
   // mocks
   const response = { ok: true }
-  const scope = nock(COUCH_URL, { reqheaders: { 'user-agent': /^nano/ } })
+  const scope = nock(COUCH_URL, { reqheaders: { 'user-agent': /^@budibase\/nano/ } })
     .get('/db?a=1&b=2')
     .reply(200, response)
 
